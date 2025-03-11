@@ -1,0 +1,147 @@
+body {
+  margin-top: 80px;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+/* botões*/
+
+#buttons-container button {
+  border: none;
+  padding: 10px 15px;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+#buttons-container button:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(63, 12, 110);
+  border: 1 solid black;
+  padding: 14px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+/* jogo*/
+
+#container {
+  display: flex;
+  width: 300px;
+  margin-top: 80px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  height: 100px;
+  border: 5px solid black;
+  box-sizing: border-box;
+  flex: 1 1 33%;
+}
+
+#block-1,
+#block-2,
+#block-3 {
+  border-top: none;
+}
+
+#block-1,
+#block-4,
+#block-7 {
+  border-left: none;
+}
+
+#block-7,
+#block-8,
+#block-9 {
+  border-bottom: none;
+}
+
+#block-3,
+#block-6,
+#block-9 {
+  border-right: none;
+}
+
+/* símbolos */
+
+.x {
+  font-size: 65px;
+  color: red;
+  display: inline-block;
+  line-height: 100px;
+}
+
+.o {
+  width: 50px;
+  height: 50px;
+  border: 5px solid green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 17px;
+}
+
+/*classe de esconder*/
+.hide {
+  display: none !important;
+}
+
+/* placar */
+
+#scoreboard-container {
+  font-weight: bold;
+  margin-top: 30px;
+  font-size: 25px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.score-box {
+  margin: 0 20px;
+}
+
+#x-scoreboard {
+  color: red;
+  margin-right: 3px;
+}
+
+#o-scoreboard {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid green;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+
+/* msg de vitória */
+
+/* Centralizando a mensagem de vitória/velha */
+#message p {
+  position: fixed;
+  top: 34.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  font-size: 30px;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000; /* Garante que a mensagem fique acima do jogo */
+}
+
+/* Desabilitando a interação com o tabuleiro quando a mensagem aparecer */
+#container.inactive {
+  pointer-events: none; /* Desativa qualquer interação com o tabuleiro */
+}
+
